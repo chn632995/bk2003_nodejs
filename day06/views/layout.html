@@ -1,0 +1,36 @@
+<!-- 布局文件：存放公共内容的文件 -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>{{block 'title'}}{{/block}}</title>
+        <meta
+            name="viewport"
+            content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
+        />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <link href="" rel="stylesheet" />
+    </head>
+    <body>
+        <header>
+            <!-- 头部 -->
+            <div>
+                <img src="https://storage.lynnn.cn/assets/markdown/91147/pictures/2020/11/bc748cafa0fd4e371a88fcea825d6e1c9d7e35a0.png?sign=b5849f390a5c22cf85f65e8d0945fc6d&t=5fc46c24"/>
+            </div>
+        </header>
+
+        <!-- 占位符（插槽，坑） -->
+        <div>
+            {{block 'content'}}{{/block}}
+        </div>
+
+        <footer>
+            <!-- 尾部 -->
+            <div>
+                <img src="https://storage.lynnn.cn/assets/markdown/91147/pictures/2020/11/01b48c51eb49c77e422207f29915816a6fe63cbe.png?sign=13de1f5e73405a05cc6a68694fcfafa7&t=5fc46c5e"/>
+            </div>
+        </footer>
+    </body>
+</html>

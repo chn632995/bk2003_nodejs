@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>测试页面</title>
+        <meta
+            name="viewport"
+            content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
+        />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <link href="" rel="stylesheet" />
+    </head>
+    <body>
+        <h1>art-template学习测试页面</h1>
+        <hr>
+        <h2>基础变量</h2>
+        <!-- 插值表达式 -->
+        <p>标准写法：{{str}}</p>
+        <p>原始写法：<%= str %></p>
+        <hr>
+        <h2>条件判断</h2>
+        <p>
+            标准写法：
+            {{if(age > 18)}}
+                成年了
+            {{else if(age == 18)}}
+                刚好成年了
+            {{else}}
+                未成年
+            {{/if}}
+        </p>
+        <p>
+            原始写法：
+            <%if(age > 18){%>
+                成年了
+            <%}else if(age == 18){%>
+                刚好成年了
+            <%}else{%>
+                未成年
+            <%}%>
+        </p>
+        <hr>
+        <h2>循环操作</h2>
+        <p>
+            标准写法：
+            <!-- 使用内置键值变量 -->
+            <ul>
+                {{each arr}}
+                    <!-- 使用内置键值变量的时候一定一定一定要写$符号 -->
+                    <li>{{$index}} - {{$value}}</li>
+                {{/each}}
+            </ul>
+            <!-- 自定义键值变量 -->
+            <ul>
+                {{each arr val key}}
+                    <!-- 使用自定义键值变量的时候一定一定一定不要写$符号 -->
+                    <li>{{key}} - {{val}}</li>
+                {{/each}}
+            </ul>
+        </p>
+        <p>
+            原始写法：
+            <ul>
+                <%for(var i = 0; i < arr.length;i++){%>
+                    <li><%=i%> - <%=arr[i]%></li>
+                <%}%>
+            </ul>
+        </p>
+        <hr>
+        <h2>模版文件包含</h2>
+        <!-- include的文件后缀不能省略，省略了则默认为.art后缀 -->
+        <p>标准写法：{{include "./inc.html"}}</p>
+        <p>原始写法：<%include("./inc.html")%></p>
+    </body>
+</html>
